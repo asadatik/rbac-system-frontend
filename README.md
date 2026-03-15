@@ -1,53 +1,38 @@
 # RBAC Frontend
 
-A modern, minimal Next.js frontend for role-based access control dashboard.
+A clean Next.js dashboard for role-based access control with JWT authentication.
 
 ## Quick Start
 
-### Installation
-
+### Install & Run
 ```bash
 npm install
-```
-
-### Environment Setup
-
-Copy `.env.example` to `.env.local` and configure:
-
-```env
-NEXT_PUBLIC_API_URL=http://localhost:5000/api
-```
-
-### Development
-
-```bash
+cp .env.example .env.local
+# Update NEXT_PUBLIC_API_URL to match your backend
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-### Production Build
-
-```bash
-npm run build
-npm start
-```
+Open `http://localhost:3000` in your browser.
 
 ## Features
 
-- **JWT Authentication** - Secure token-based auth with refresh token support
-- **Role-Based Access Control** - UI components protected by user roles and permissions
-- **Responsive Design** - Mobile-first design with Tailwind CSS
-- **Smooth Animations** - Framer Motion for polished interactions
-- **Form Validation** - React Hook Form with Zod validation
-- **API Integration** - Axios client with automatic auth interceptors
+- **JWT Authentication** - Login with email/password, auto token refresh
+- **Protected Routes** - Auth guard for dashboard access
+- **Role-Based UI** - Admin panel visibility based on user role
+- **Responsive Design** - Mobile-first Tailwind CSS layout
+- **Form Validation** - React Hook Form with Zod schemas
+- **API Integration** - Axios with automatic auth headers
 
 ## Project Structure
 
 ```
 src/
-├── app/              # Next.js pages and layouts
-├── components/       # Reusable UI components
+├── app/              # Pages and layouts
+├── components/       # UI components (Navbar, ProtectedRoute, RoleGuard)
+├── lib/              # API client and auth utilities
+├── hooks/            # useAuth hook
+└── types/            # TypeScript interfaces
+```
 ├── lib/             # Utilities (API client, auth helpers)
 ├── hooks/           # Custom React hooks
 └── types/           # TypeScript type definitions
@@ -93,4 +78,3 @@ Or check permissions:
 - **React Hook Form** - Form handling
 - **Zod** - Schema validation
 - **js-cookie** - Cookie management
-# rbac-system-frontend
